@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freiburg Vibe | Dein moderner Guide für Restaurants & Events</title>
-    <!-- SEO & Social -->
     <meta name="description" content="Entdecke Freiburg in einem modernen Dark-Mode. Dein Guide zu den besten Restaurants, Bars, Events und KI-kuratierten News mit Neon-Akzenten.">
     <meta name="keywords" content="restaurants freiburg, bars freiburg, events freiburg, freiburg guide, dark mode, neon, modern web design, ai news">
     <link rel="canonical" href="https://www.freiburg-vibe.de/">
@@ -14,14 +13,11 @@
     <meta property="og:url" content="https://www.freiburg-vibe.de/">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#101010">
-    <!-- Tailwind & FontAwesome -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Tailwind Customization -->
     <script>
         tailwind.config = {
             theme: {
@@ -56,7 +52,7 @@
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #101010; color: #EAEAEA; }
-        .hero-bg { 
+        .hero-bg {
             background: linear-gradient(rgba(16, 16, 16, 0.85), rgba(16, 16, 16, 0.85)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Freiburg_Germany_Panorama_night_view_from_Schlossberg_2023.jpg/1920px-Freiburg_Germany_Panorama_night_view_from_Schlossberg_2023.jpg') center center / cover no-repeat;
             animation: hero-pan 40s linear infinite alternate;
         }
@@ -78,7 +74,6 @@
     </style>
 </head>
 <body class="bg-dark-bg">
-    <!-- Header & Navigation -->
     <header id="main-nav" class="fixed top-0 left-0 right-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -110,7 +105,6 @@
         </div>
     </header>
     <main>
-        <!-- Hero -->
         <section id="home" class="hero-bg min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
             <div class="container mx-auto px-4 text-center text-light-text relative z-10">
                 <div class="max-w-4xl mx-auto animate-fade-in-up">
@@ -123,11 +117,13 @@
                     <a href="#news" class="ripple-btn inline-block bg-neon-purple text-white font-bold text-lg py-4 px-10 rounded-full shadow-lg hover:bg-purple-700 transform hover:scale-105 transition-all" style="box-shadow: 0 0 20px rgba(160, 32, 240, 0.6);">
                         Zu den News
                     </a>
-                </div>
+                    <p class="text-sm text-subtle-gray mt-8">
+                        Interesse an einer Partnerschaft? <a href="#contact" class="hover:text-neon-purple underline">Kontaktieren Sie uns.</a>
+                    </p>
+                    </div>
             </div>
             <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-dark-bg to-transparent"></div>
         </section>
-        <!-- News Section (RSS FEED) -->
         <section id="news" class="py-24 bg-dark-bg">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-16 fade-in-section">
@@ -138,7 +134,6 @@
                 <noscript class="text-subtle-gray text-center block mt-8">News-Feed benötigt JavaScript.</noscript>
             </div>
         </section>
-        <!-- Events -->
         <section id="events" class="py-24 bg-dark-card">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-16 fade-in-section">
@@ -167,7 +162,6 @@
                 </div>
             </div>
         </section>
-        <!-- Locations -->
         <section id="locations" class="py-24 bg-dark-bg">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-16 fade-in-section">
@@ -194,7 +188,6 @@
                 </div>
             </div>
         </section>
-        <!-- Kategorien -->
         <section id="categories" class="py-24 bg-dark-card">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-16 fade-in-section">
@@ -210,7 +203,6 @@
                 </div>
             </div>
         </section>
-        <!-- Kontakt -->
         <section id="contact" class="py-24 bg-dark-bg">
             <div class="container mx-auto px-4 text-center">
                 <div class="fade-in-section">
@@ -229,7 +221,7 @@
     </main>
     <footer class="bg-black text-light-text">
         <div class="container mx-auto px-4 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-center md:text-left">
                 <div>
                     <h3 class="text-xl font-bold mb-4">Freiburg<span class="text-neon-purple">Vibe</span></h3>
                     <p class="text-subtle-gray">Dein moderner Guide für das Beste in Freiburg.</p>
@@ -252,6 +244,13 @@
                     </ul>
                 </div>
                 <div>
+                    <h4 class="font-bold text-lg mb-4">Business</h4>
+                    <ul class="space-y-2 text-subtle-gray">
+                        <li><a href="#contact" class="hover:text-neon-purple transition-colors">Werbung schalten</a></li>
+                        <li><a href="#contact" class="hover:text-neon-purple transition-colors">Kontakt für Partner</a></li>
+                    </ul>
+                </div>
+                <div>
                     <h4 class="font-bold text-lg mb-4">Social Media</h4>
                     <div class="flex justify-center md:justify-start space-x-6 text-2xl text-subtle-gray">
                         <a href="#" aria-label="Facebook" class="hover:text-neon-purple transition-colors transform hover:scale-110"><i class="fab fa-facebook-f"></i></a>
@@ -265,7 +264,6 @@
             </div>
         </div>
     </footer>
-    <!-- RSS Feed Loader -->
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         // Sticky Header, Mobile Nav, etc. (wie gehabt)
