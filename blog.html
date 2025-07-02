@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Archiv | Freiburg Vibe</title>
+    <meta name="description" content="Alle Blog-Artikel, Guides und News aus Freiburg. Insider-Tipps, Erfahrungsberichte, Food, Events und mehr.">
+    <meta name="keywords" content="blog freiburg, news, events, guides, erfahrungen, tipps, freiburg vibe">
+    <link rel="canonical" href="https://www.freiburg-vibe.de/blog.html">
+    <meta property="og:title" content="Blog & Archiv | Freiburg Vibe">
+    <meta property="og:description" content="Stöbere in allen unseren Artikeln und Guides für Freiburg.">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Freiburg_Germany_Panorama_night_view_from_Schlossberg_2023.jpg/1200px-Freiburg_Germany_Panorama_night_view_from_Schlossberg_2023.jpg">
+    <meta property="og:url" content="https://www.freiburg-vibe.de/blog.html">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#101010">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { 'dark-bg': '#101010', 'dark-card': '#1a1a1a', 'neon-purple': '#A020F0', 'light-text': '#EAEAEA', 'subtle-gray': '#888888' },
+                    animation: { 'fade-in-up': 'fadeInUp 0.8s ease-out forwards', 'fade-in': 'fadeIn 0.6s ease-out forwards', 'hero-pan': 'heroPan 40s linear infinite alternate', 'float': 'float 6s ease-in-out infinite', },
+                    keyframes: {
+                        fadeInUp: { '0%': { opacity: 0, transform: 'translateY(30px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+                        fadeIn: { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
+                        heroPan: { '0%': { backgroundPosition: '0% 50%' }, '100%': { backgroundPosition: '100% 50%' } },
+                        float: { '0%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-20px)' }, '100%': { transform: 'translateY(0px)' } }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #101010; color: #EAEAEA; }
+        .neon-text { color: #A020F0; text-shadow: 0 0 5px #A020F0, 0 0 10px #A020F0, 0 0 20px #A020F0, 0 0 40px #A020F0; }
+        #main-nav { transition: background-color 0.4s, box-shadow 0.4s; }
+        #main-nav.scrolled {background: rgba(26, 26, 26, 0.8);backdrop-filter: blur(10px);box-shadow: 0 4px 30px rgba(0,0,0,0.1);border-bottom: 1px solid rgba(160, 32, 240, 0.2);}
+        .nav-link { color: #EAEAEA;}
+        #main-nav.scrolled .nav-link:hover, .nav-link:hover {color: #A020F0;}
+        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.5s, opacity 0.5s; opacity: 0; background: rgba(26, 26, 26, 0.98);backdrop-filter: blur(10px);}
+        .mobile-menu.open { max-height: 100vh; opacity: 1;}
+        .ripple-btn { position: relative; overflow: hidden; -webkit-tap-highlight-color: transparent;}
+        .ripple { position: absolute; border-radius: 50%; background-color: rgba(255,255,255,0.6); transform: scale(0); animation: ripple-animation 0.6s linear;}
+        @keyframes ripple-animation { to { transform: scale(4); opacity: 0; }}
+        .service-card{background:#1a1a1a;}.card-image-zoom{transition:transform .4s ease-out}.service-card:hover .card-image-zoom{transform:scale(1.05)}
+        /* Spezifische Styles für den Blog-Artikel */
+        .article-content h3 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: #EAEAEA; }
+        .article-content p { margin-bottom: 1.25rem; line-height: 1.75; color: #EAEAEA; }
+        .article-content a { color: #A020F0; text-decoration: underline; }
+    </style>
+</head>
+<body class="bg-dark-bg">
+
+    <header id="main-nav" class="sticky top-0 left-0 right-0 z-50 scrolled">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-3xl font-bold brand-text text-light-text transition-colors">Freiburg<span class="text-neon-purple">Vibe</span></a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#news" class="nav-link text-lg font-medium">News</a>
+                    <a href="index.html#restaurants" class="nav-link text-lg font-medium">Restaurants</a>
+                    <a href="index.html#bars" class="nav-link text-lg font-medium">Bars</a>
+                    <a href="index.html#events" class="nav-link text-lg font-medium">Events</a>
+                    <a href="index.html#locations" class="nav-link text-lg font-medium">Locations</a>
+                    <a href="blog.html" class="nav-link text-lg font-medium nav-link-active">Blog</a> <a href="index.html#contact" class="nav-link text-lg font-medium">Kontakt</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="inline-flex items-center p-2 rounded-md text-light-text hover:text-neon-purple"><i id="mobile-menu-icon" class="fas fa-bars text-2xl"></i></button>
+                </div>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="mobile-menu md:hidden">
+             <div class="px-2 pt-2 pb-4 space-y-2 text-center">
+                <a href="index.html#news" class="nav-link block px-3 py-3 rounded-md text-xl font-medium">News</a>
+                <a href="index.html#restaurants" class="nav-link block px-3 py-3 rounded-md text-xl font-medium">Restaurants</a>
+                <a href="index.html#bars" class="nav-link block px-3 py-3 rounded-md text-xl font-medium">Bars</a>
+                <a href="index.html#events" class="nav-link block px-3 py-3 rounded-md text-xl font-medium">Events</a>
+                <a href="index.html#locations" class="nav-link block px-3 py-3 rounded-md text-xl font-medium">Locations</a>
+                <a href="blog.html" class="nav-link block px-3 py-3 rounded-md text-xl font-medium">Blog</a>
+                <a href="index.html#contact" class="nav-link block px-3 py-3 rounded-md text-xl font-medium">Kontakt</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <header class="py-16 bg-dark-bg text-center">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Unser <span class="neon-text">Blog & Archiv</span></h1>
+                <p class="text-xl text-subtle-gray max-w-3xl mx-auto">Alle Artikel, Guides und News rund um Freiburg. Inspiration, Geheimtipps und mehr!</p>
+            </div>
+        </header>
+
+        <div class="container mx-auto px-4 py-12">
+            <section id="all-articles" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></section>
+            <section id="blog-article-full" class="max-w-4xl mx-auto"></section>
+        </div>
+    </main>
+
+    <footer class="bg-black text-light-text">
+        <div class="container mx-auto px-4 py-12">
+             <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Freiburg<span class="text-neon-purple">Vibe</span></h3>
+                    <p class="text-subtle-gray">Dein moderner Guide für das Beste in Freiburg.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-subtle-gray">
+                        <li><a href="index.html#news" class="hover:text-neon-purple transition-colors">News</a></li>
+                        <li><a href="index.html#restaurants" class="hover:text-neon-purple transition-colors">Restaurants</a></li>
+                        <li><a href="index.html#events" class="hover:text-neon-purple transition-colors">Events</a></li>
+                        <li><a href="blog.html" class="hover:text-neon-purple transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Rechtliches</h4>
+                    <ul class="space-y-2 text-subtle-gray">
+                        <li><a href="impressum.html" class="hover:text-neon-purple transition-colors">Impressum</a></li>
+                        <li><a href="datenschutz.html" class="hover:text-neon-purple transition-colors">Datenschutz</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Business</h4>
+                    <ul class="space-y-2 text-subtle-gray">
+                        <li><a href="index.html#contact" class="hover:text-neon-purple transition-colors">Werbung schalten</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Social Media</h4>
+                    <div class="flex justify-center md:justify-start space-x-6 text-2xl text-subtle-gray">
+                        <a href="#" aria-label="Facebook" class="hover:text-neon-purple transition-colors transform hover:scale-110"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram" class="hover:text-neon-purple transition-colors transform hover:scale-110"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="TikTok" class="hover:text-neon-purple transition-colors transform hover:scale-110"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-subtle-gray mt-10 border-t border-gray-800 pt-8">
+                &copy; 2025 FreiburgVibe. Mit <i class="fas fa-heart text-neon-purple"></i> in Freiburg erstellt.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Interaktivität für Header & Co. (von index.html) ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            mobileMenuIcon.classList.toggle('fa-bars');
+            mobileMenuIcon.classList.toggle('fa-times');
+        });
+
+        // --- Logik zum Laden der Blog-Artikel ---
+
+        // Manuelle Artikelliste basierend auf deiner Ordnerstruktur
+        const articlesList = [
+            "content/articles/neu-in-freiburg-guide.md",
+            "content/articles/therme-freiburg-vergleich.md",
+            "content/articles/vintage-secondhand-freiburg.md",
+            "content/articles/wandern-geheimtipps-freiburg.md",
+            "content/articles/weinfest-freiburg-guide.md",
+            "content/articles/zmf-freiburg-guide.md"
+        ];
+
+        // Funktion zum Auslesen des URL-Parameters
+        function getQueryParam(name) {
+            const url = new URL(window.location.href);
+            return url.searchParams.get(name);
+        }
+
+        // Funktion zum Laden und Anzeigen eines einzelnen Artikels
+        async function loadBlogArticle(file) {
+            const container = document.getElementById('blog-article-full');
+            container.innerHTML = `<div class='text-center text-subtle-gray p-10'>Lade Artikel...</div>`;
+            try {
+                const res = await fetch(file);
+                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+                const text = await res.text();
+                
+                // Extrahiere den Titel (#) und den Rest des Inhalts
+                const titleMatch = text.match(/^# (.+)/m);
+                const title = titleMatch ? titleMatch[1] : "Unbenannter Artikel";
+                const content = titleMatch ? text.substring(titleMatch[0].length).trim() : text;
+
+                // Einfacher Markdown-Parser
+                let htmlContent = content
+                    .replace(/^## (.+)/gm, '<h3>$1</h3>')
+                    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/__(.+?)__/g, '<strong>$1</strong>')
+                    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+                    .replace(/_(.+?)_/g, '<em>$1</em>')
+                    .split(/\n\s*\n/).map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
+
+                container.innerHTML = `
+                    <article class="bg-dark-card p-6 md:p-10 rounded-2xl shadow-lg">
+                        <h1 class="text-3xl md:text-4xl font-extrabold mb-6 text-light-text">${title}</h1>
+                        <div class="article-content text-subtle-gray">
+                            ${htmlContent}
+                        </div>
+                        <a href="blog.html" class="ripple-btn mt-10 inline-block text-neon-purple font-semibold text-lg">
+                            <i class="fas fa-arrow-left text-sm mr-2"></i> Zurück zur Übersicht
+                        </a>
+                    </article>
+                `;
+            } catch (e) {
+                console.error("Fehler beim Laden des Artikels:", e);
+                container.innerHTML = `<div class='text-center text-neon-purple p-10'>Artikel konnte nicht geladen werden. Bitte versuche es später erneut.</div>`;
+            }
+        }
+
+        // Funktion zum Anzeigen der Artikelübersicht
+        async function showBlogOverview() {
+            const container = document.getElementById('all-articles');
+            container.innerHTML = `<div class='text-center text-subtle-gray'>Lade Artikel...</div>`;
+            let html = "";
+            // Artikel in umgekehrter Reihenfolge laden (neueste zuerst)
+            for (const file of articlesList.slice().reverse()) {
+                try {
+                    const res = await fetch(file);
+                    if (!res.ok) continue; // Überspringe bei Fehler
+                    const text = await res.text();
+                    
+                    const title = (text.match(/^# (.+)/m) || [])[1] || "Blog-Artikel";
+                    const preview = text.substring(title.length).trim().substring(0, 150) + "...";
+
+                    html += `
+                    <article class="service-card rounded-2xl overflow-hidden shadow-lg h-full flex flex-col bg-dark-card transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-3 text-light-text">${title}</h3>
+                            <p class="text-subtle-gray flex-grow mb-4">${preview}</p>
+                            <a href="blog.html?file=${encodeURIComponent(file)}" class="ripple-btn mt-4 text-neon-purple font-semibold self-start text-lg">
+                                Weiterlesen <i class="fas fa-arrow-right text-sm ml-1"></i>
+                            </a>
+                        </div>
+                    </article>`;
+                } catch(e) {
+                    console.error("Fehler beim Laden der Vorschau für:", file, e);
+                }
+            }
+            container.innerHTML = html || "<p class='text-subtle-gray col-span-full text-center'>Keine Artikel gefunden.</p>";
+        }
+
+        // --- Routing: Entscheiden, was angezeigt wird ---
+        const fileToLoad = getQueryParam('file');
+        if (fileToLoad) {
+            document.getElementById('all-articles').style.display = 'none'; // Verstecke die Übersicht
+            document.getElementById('blog-article-full').style.display = 'block';
+            loadBlogArticle(fileToLoad);
+        } else {
+            document.getElementById('all-articles').style.display = 'grid'; // Zeige die Übersicht
+            document.getElementById('blog-article-full').style.display = 'none';
+            showBlogOverview();
+        }
+    });
+    </script>
+
+</body>
+</html>

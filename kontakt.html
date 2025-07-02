@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Freiburg Vibe</title>
+    <meta name="description" content="Kontaktiere uns für Fragen, Feedback oder Partnerschaften.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script> /* Tailwind Config */ </script>
+    <style> /* Komplette Styles von impressum.html hier einfügen */ </style>
+</head>
+<body class="bg-dark-bg">
+
+    <header id="main-nav" class="sticky top-0 left-0 right-0 z-50"></header>
+
+    <main class="pt-20">
+        <div class="container mx-auto px-4 py-16">
+            <div class="max-w-3xl mx-auto text-center">
+                 <i class="fas fa-paper-plane text-6xl text-neon-purple mb-6" style="text-shadow: 0 0 15px #A020F0;"></i>
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Kontakt aufnehmen</h1>
+                <p class="text-xl text-subtle-gray max-w-2xl mx-auto mb-12">Hast du Fragen, Feedback oder Interesse an einer <span class="text-neon-purple font-semibold">Werbepartnerschaft</span>? Wir freuen uns, von dir zu hören!</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto bg-dark-card p-8 md:p-10 rounded-2xl shadow-lg">
+                <form action="#" method="POST">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-light-text mb-2">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full p-3 rounded-lg bg-dark-bg text-light-text border border-gray-700 focus:outline-none focus:ring-2 focus:ring-neon-purple/50 transition-all">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-light-text mb-2">E-Mail</label>
+                            <input type="email" id="email" name="email" required class="w-full p-3 rounded-lg bg-dark-bg text-light-text border border-gray-700 focus:outline-none focus:ring-2 focus:ring-neon-purple/50 transition-all">
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <label for="message" class="block text-sm font-medium text-light-text mb-2">Deine Nachricht</label>
+                        <textarea id="message" name="message" rows="6" required class="w-full p-3 rounded-lg bg-dark-bg text-light-text border border-gray-700 focus:outline-none focus:ring-2 focus:ring-neon-purple/50 transition-all"></textarea>
+                    </div>
+                    <div class="mt-8 text-center">
+                         <button type="submit" class="ripple-btn bg-neon-purple text-white font-bold text-lg py-4 px-10 rounded-full shadow-lg hover:bg-purple-700 transform hover:scale-105 transition-all" style="box-shadow: 0 0 20px rgba(160, 32, 240, 0.6);">
+                            Nachricht senden
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black text-light-text"></footer>
+
+    <script> /* Script für mobiles Menü und Ripple-Effekt */ </script>
+</body>
+</html>
