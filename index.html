@@ -155,7 +155,7 @@
                     <p class="text-xl text-subtle-gray max-w-3xl mx-auto">Verpasse keine Festivals, Konzerte oder saisonalen Highlights mehr in der Stadt.</p>
                 </div>
                 <div class="max-w-4xl mx-auto space-y-8">
-                    <!-- Zelt-Musik-Festival (ZMF) - Snippet war identisch und bleibt so -->
+                    <!-- Zelt-Musik-Festival (ZMF) -->
                     <div class="fade-in-section bg-dark-bg p-6 rounded-2xl shadow-lg flex flex-col md:flex-row items-center gap-6 border border-gray-800">
                         <picture class="w-32 h-32 flex-shrink-0">
                             <source srcset="img/zmf-festival.webp" type="image/webp">
@@ -176,7 +176,7 @@
                             Tickets & Info
                         </a>
                     </div>
-                    <!-- Sea You Festival - Ersetzt durch das neue, detailliertere Snippet -->
+                    <!-- Sea You Festival - Beach Republic -->
                     <div class="fade-in-section bg-dark-bg p-6 rounded-2xl shadow-lg flex flex-col md:flex-row items-center gap-6 border border-gray-800">
                         <picture class="w-32 h-32 flex-shrink-0">
                             <source srcset="img/sea-you-festival.webp" type="image/webp">
@@ -209,7 +209,8 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     <div class="service-card rounded-2xl overflow-hidden shadow-lg h-full flex flex-col fade-in-section">
-                        <img src="https://via.placeholder.com/800x600/888888/101010?text=Central+Park" class="card-image-zoom w-full h-48 object-cover" alt="Central Park Freiburg">
+                        <!-- Placeholder - ersetze dies bei Bedarf durch lokale Bilder -->
+                        <img src="https://via.placeholder.com/800x600/888888/101010?text=Central+Park" class="card-image-zoom w-full h-48 object-cover" alt="Central Park Freiburg" loading="lazy">
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-2xl font-bold mb-2 text-light-text">Central Park Freiburg</h3>
                             <p class="text-subtle-gray flex-grow mb-4">Grüne Oase für Picknick, Sport & Entspannung mitten in der Stadt.</p>
@@ -217,7 +218,8 @@
                         </div>
                     </div>
                     <div class="service-card rounded-2xl overflow-hidden shadow-lg h-full flex flex-col fade-in-section">
-                        <img src="https://via.placeholder.com/800x600/1a1a1a/EAEAEA?text=Jazzhaus" class="card-image-zoom w-full h-48 object-cover" alt="Jazzhaus Freiburg">
+                        <!-- Placeholder - ersetze dies bei Bedarf durch lokale Bilder -->
+                        <img src="https://via.placeholder.com/800x600/1a1a1a/EAEAEA?text=Jazzhaus" class="card-image-zoom w-full h-48 object-cover" alt="Jazzhaus Freiburg" loading="lazy">
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-2xl font-bold mb-2 text-light-text">Jazzhaus</h3>
                             <p class="text-subtle-gray flex-grow mb-4">Legendärer Club für Live-Musik und Partys im Herzen Freiburgs.</p>
@@ -225,7 +227,8 @@
                         </div>
                     </div>
                     <div class="service-card rounded-2xl overflow-hidden shadow-lg h-full flex flex-col fade-in-section">
-                        <img src="https://via.placeholder.com/800x600/A020F0/101010?text=Münsterplatz" class="card-image-zoom w-full h-48 object-cover" alt="Münsterplatz Freiburg">
+                        <!-- Placeholder - ersetze dies bei Bedarf durch lokale Bilder -->
+                        <img src="https://via.placeholder.com/800x600/A020F0/101010?text=Münsterplatz" class="card-image-zoom w-full h-48 object-cover" alt="Münsterplatz Freiburg" loading="lazy">
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-2xl font-bold mb-2 text-light-text">Münsterplatz</h3>
                             <p class="text-subtle-gray flex-grow mb-4">Das historische Herz der Stadt mit dem täglichen Münstermarkt und dem Freiburger Münster.</p>
@@ -317,7 +320,8 @@
             let currentSectionId = 'home';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                if (window.scrollY >= sectionTop - 100) {
+                // Add a small offset so active state changes a bit before the section hits the very top
+                if (window.scrollY >= sectionTop - 100) { 
                    currentSectionId = section.getAttribute('id');
                 }
             });
@@ -336,6 +340,16 @@
         });
         document.querySelectorAll('#mobile-menu a, #main-nav a[href^="#"]').forEach(link => {
             link.addEventListener('click', () => {
+                // Smooth scroll for anchor links
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - nav.offsetHeight, // Adjust for fixed header height
+                        behavior: 'smooth'
+                    });
+                }
+                // Close mobile menu if open
                 mobileMenu.classList.remove('open');
                 mobileMenuIcon.classList.add('fa-bars');
                 mobileMenuIcon.classList.remove('fa-times');
