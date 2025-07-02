@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Freiburg Guide: Die besten Restaurants, Events &amp; Geheimtipps | Freiburg Vibe</title>
+    <meta name="description" content="Dein aktueller Guide für Freiburg: Finde die besten Restaurants, die coolsten Bars, alle wichtigen Events und echte Geheimtipps. Entdecke das Freiburger Nachtleben mit uns!">
+    <meta name="keywords" content="freiburg guide, restaurants freiburg, was tun in freiburg, events freiburg, bars freiburg, nachtleben freiburg, freiburg tipps, geheimtipps freiburg, freiburg erleben">
+    <link rel="canonical" href="https://www.freiburg-vibe.de/index.html">
+    <meta property="og:title" content="Freiburg Vibe | Dein Guide für das Beste in Freiburg">
+    <meta property="og:description" content="Entdecke mit uns die Top-Restaurants, das pulsierende Nachtleben und die besten Events, die Freiburg zu bieten hat.">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Freiburg_Germany_Panorama_night_view_from_Schlossberg_2023.jpg/1200px-Freiburg_Germany_Panorama_night_view_from_Schlossberg_2023.jpg">
+    <meta property="og:url" content="https://www.freiburg-vibe.de/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    <meta name="theme-color" content="#101010">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Freiburg Vibe",
+      "url": "https://www.freiburg-vibe.de/",
+      "description": "Dein aktueller Guide für Freiburg: Finde die besten Restaurants, die coolsten Bars, alle wichtigen Events und echte Geheimtipps.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Freiburg Vibe",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.freiburg-vibe.de/img/logo.png" 
+        }
+      }
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        'dark-bg': '#101010', 'dark-card': '#1a1a1a', 'neon-purple': '#A020F0', 'light-text': '#EAEAEA', 'subtle-gray': '#888888',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards', 'fade-in': 'fadeIn 0.6s ease-out forwards', 'hero-pan': 'heroPan 40s linear infinite alternate',
+                    },
+                    keyframes: {
+                        fadeInUp: { '0%': { opacity: 0, transform: 'translateY(30px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+                        fadeIn: { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
+                        heroPan: { '0%': { backgroundPosition: '0% 50%' }, '100%': { backgroundPosition: '100% 50%' } },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #101010; color: #EAEAEA; scroll-behavior: smooth; }
+        .hero-bg { background: linear-gradient(rgba(16, 16, 16, 0.85), rgba(16, 16, 16, 0.85)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Freiburg_Germany_Panorama_night_view_from_Schlossberg_2023.jpg/1920px-Freiburg_Germany_Panorama_night_view_from_Schlossberg_2023.jpg') center center / cover no-repeat; animation: hero-pan 40s linear infinite alternate; }
+        .neon-text { color: #A020F0; text-shadow: 0 0 5px #A020F0, 0 0 10px #A020F0, 0 0 20px #A020F0, 0 0 40px #A020F0;}
+        #main-nav { transition: background-color 0.4s, box-shadow 0.4s; }
+        #main-nav.scrolled {background: rgba(26, 26, 26, 0.8);backdrop-filter: blur(10px);box-shadow: 0 4px 30px rgba(0,0,0,0.1);border-bottom: 1px solid rgba(160, 32, 240, 0.2);}
+        .nav-link { color: #EAEAEA; transition: color 0.3s; }
+        #main-nav.scrolled .nav-link:hover, .nav-link:hover {color: #A020F0;}
+        .nav-link-active { color: #A020F0 !important; font-weight: 700; position: relative;}
+        .nav-link-active::after {content: '';position: absolute;bottom: -6px;left: 50%;transform: translateX(-50%);width: 20px;height: 3px;background-color: #A020F0;border-radius: 2px;box-shadow: 0 0 8px #A020F0;}
+        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.5s, opacity 0.5s; opacity: 0; background: rgba(26, 26, 26, 0.98);backdrop-filter: blur(10px);}
+        .mobile-menu.open { max-height: 100vh; opacity: 1;}
+        .fade-in-section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s, transform 0.8s;}
+        .fade-in-section.is-visible { opacity: 1; transform: translateY(0);}
+        .ripple-btn { position: relative; overflow: hidden; -webkit-tap-highlight-color: transparent;}
+        .ripple { position: absolute; border-radius: 50%; background-color: rgba(255,255,255,0.6); transform: scale(0); animation: ripple-animation 0.6s linear;}
+        @keyframes ripple-animation { to { transform: scale(4); opacity: 0; }}
+        .service-card{background:#1a1a1a;}.card-image-zoom{transition:transform .4s ease-out}.service-card:hover .card-image-zoom{transform:scale(1.05)}
+    </style>
+</head>

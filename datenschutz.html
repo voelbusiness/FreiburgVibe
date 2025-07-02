@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datenschutz | Freiburg Vibe</title>
-    <meta name="description" content="Datenschutzerklärung für Freiburg Vibe.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script> /* Tailwind Config */ </script>
-    <style> /* Komplette Styles von impressum.html hier einfügen */ </style>
+<!-- Shared Head -->
+    <div id="shared-head"></div>
+
 </head>
 <body class="bg-dark-bg">
 
-    <header id="main-nav" class="sticky top-0 left-0 right-0 z-50"></header>
+    <!-- Shared Header -->
+    <div id="shared-header"></div>
 
     <main class="pt-20">
         <div class="container mx-auto px-4 py-16">
@@ -40,8 +32,22 @@
         </div>
     </main>
     
-    <footer class="bg-black text-light-text"></footer>
+    <!-- Shared Footer -->
+    <div id="shared-footer"></div>
 
-    <script> /* Script für mobiles Menü */ </script>
+    <!-- Shared Scripts -->
+    <div id="shared-scripts"></div>
+
+    <script>
+        // Use fetch to load shared components
+        fetch('shared-head.html').then(response => response.text()).then(data => document.getElementById('shared-head').innerHTML = data);
+        fetch('shared-header.html').then(response => response.text()).then(data => document.getElementById('shared-header').innerHTML = data);
+        fetch('shared-footer.html').then(response => response.text()).then(data => document.getElementById('shared-footer').innerHTML = data);
+        fetch('shared-scripts.html').then(response => response.text()).then(data => {
+            const script = document.createElement('script');
+            script.innerHTML = data;
+            document.body.appendChild(script);
+        });
+    </script>
 </body>
 </html>

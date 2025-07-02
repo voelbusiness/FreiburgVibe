@@ -1,118 +1,11 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Shared Head -->
+    <div id="shared-head"></div>
 
-    <title>Freiburg Guide: Die besten Restaurants, Events &amp; Geheimtipps | Freiburg Vibe</title>
-    <meta name="description" content="Dein aktueller Guide für Freiburg: Finde die besten Restaurants, die coolsten Bars, alle wichtigen Events und echte Geheimtipps. Entdecke das Freiburger Nachtleben mit uns!">
-    <meta name="keywords" content="freiburg guide, restaurants freiburg, was tun in freiburg, events freiburg, bars freiburg, nachtleben freiburg, freiburg tipps, geheimtipps freiburg, freiburg erleben">
-    <link rel="canonical" href="https://www.freiburg-vibe.de/index.html">
-    <meta property="og:title" content="Freiburg Vibe | Dein Guide für das Beste in Freiburg">
-    <meta property="og:description" content="Entdecke mit uns die Top-Restaurants, das pulsierende Nachtleben und die besten Events, die Freiburg zu bieten hat.">
-    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Freiburg_Germany_Panorama_night_view_from_Schlossberg_2023.jpg/1200px-Freiburg_Germany_Panorama_night_view_from_Schlossberg_2023.jpg">
-    <meta property="og:url" content="https://www.freiburg-vibe.de/index.html">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="de_DE">
-    <meta name="theme-color" content="#101010">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Freiburg Vibe",
-      "url": "https://www.freiburg-vibe.de/",
-      "description": "Dein aktueller Guide für Freiburg: Finde die besten Restaurants, die coolsten Bars, alle wichtigen Events und echte Geheimtipps.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Freiburg Vibe",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.freiburg-vibe.de/img/logo.png" 
-        }
-      }
-    }
-    </script>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        'dark-bg': '#101010', 'dark-card': '#1a1a1a', 'neon-purple': '#A020F0', 'light-text': '#EAEAEA', 'subtle-gray': '#888888',
-                    },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards', 'fade-in': 'fadeIn 0.6s ease-out forwards', 'hero-pan': 'heroPan 40s linear infinite alternate',
-                    },
-                    keyframes: {
-                        fadeInUp: { '0%': { opacity: 0, transform: 'translateY(30px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
-                        fadeIn: { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
-                        heroPan: { '0%': { backgroundPosition: '0% 50%' }, '100%': { backgroundPosition: '100% 50%' } },
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #101010; color: #EAEAEA; scroll-behavior: smooth; }
-        .hero-bg { background: linear-gradient(rgba(16, 16, 16, 0.85), rgba(16, 16, 16, 0.85)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Freiburg_Germany_Panorama_night_view_from_Schlossberg_2023.jpg/1920px-Freiburg_Germany_Panorama_night_view_from_Schlossberg_2023.jpg') center center / cover no-repeat; animation: hero-pan 40s linear infinite alternate; }
-        .neon-text { color: #A020F0; text-shadow: 0 0 5px #A020F0, 0 0 10px #A020F0, 0 0 20px #A020F0, 0 0 40px #A020F0;}
-        #main-nav { transition: background-color 0.4s, box-shadow 0.4s; }
-        #main-nav.scrolled {background: rgba(26, 26, 26, 0.8);backdrop-filter: blur(10px);box-shadow: 0 4px 30px rgba(0,0,0,0.1);border-bottom: 1px solid rgba(160, 32, 240, 0.2);}
-        .nav-link { color: #EAEAEA; transition: color 0.3s; }
-        #main-nav.scrolled .nav-link:hover, .nav-link:hover {color: #A020F0;}
-        .nav-link-active { color: #A020F0 !important; font-weight: 700; position: relative;}
-        .nav-link-active::after {content: '';position: absolute;bottom: -6px;left: 50%;transform: translateX(-50%);width: 20px;height: 3px;background-color: #A020F0;border-radius: 2px;box-shadow: 0 0 8px #A020F0;}
-        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.5s, opacity 0.5s; opacity: 0; background: rgba(26, 26, 26, 0.98);backdrop-filter: blur(10px);}
-        .mobile-menu.open { max-height: 100vh; opacity: 1;}
-        .fade-in-section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s, transform 0.8s;}
-        .fade-in-section.is-visible { opacity: 1; transform: translateY(0);}
-        .ripple-btn { position: relative; overflow: hidden; -webkit-tap-highlight-color: transparent;}
-        .ripple { position: absolute; border-radius: 50%; background-color: rgba(255,255,255,0.6); transform: scale(0); animation: ripple-animation 0.6s linear;}
-        @keyframes ripple-animation { to { transform: scale(4); opacity: 0; }}
-        .service-card{background:#1a1a1a;}.card-image-zoom{transition:transform .4s ease-out}.service-card:hover .card-image-zoom{transform:scale(1.05)}
-    </style>
 </head>
 <body class="bg-dark-bg">
 
-    <header id="main-nav" class="fixed top-0 left-0 right-0 z-50">
-        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0">
-                    <a href="#home" class="text-3xl font-bold brand-text text-light-text transition-colors">Freiburg<span class="text-neon-purple">Vibe</span></a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link text-lg font-medium">Home</a>
-                    <a href="#news" class="nav-link text-lg font-medium">News & Tipps</a>
-                    <a href="#events" class="nav-link text-lg font-medium">Events</a>
-                    <a href="blog.html" class="nav-link text-lg font-medium">Blog</a>
-                    <a href="about.html" class="nav-link text-lg font-medium">Über Uns</a>
-                    <a href="kontakt.html" class="nav-link text-lg font-medium">Kontakt</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" aria-label="Menü öffnen" class="inline-flex items-center p-2 rounded-md text-light-text hover:text-neon-purple"><i id="mobile-menu-icon" class="fas fa-bars text-2xl"></i></button>
-                </div>
-            </div>
-        </nav>
-        <div id="mobile-menu" class="mobile-menu md:hidden">
-            <div class="px-2 pt-2 pb-4 space-y-2 text-center">
-                <a href="#home" class="nav-link block px-3 py-3 rounded-md text-xl font-medium">Home</a>
-                <a href="#news" class="nav-link block px-3 py-3 rounded-md text-xl font-medium">News & Tipps</a>
-                <a href="#events" class="nav-link block px-3 py-3 rounded-md text-xl font-medium">Events</a>
-                <a href="blog.html" class="nav-link block px-3 py-3 rounded-md text-xl font-medium">Blog</a>
-                <a href="about.html" class="nav-link block px-3 py-3 rounded-md text-xl font-medium">Über Uns</a>
-                <a href="kontakt.html" class="nav-link block px-3 py-3 rounded-md text-xl font-medium">Kontakt</a>
-                <a href="#contact" class="nav-link block px-3 py-3 rounded-md text-xl font-medium">Newsletter</a>
-            </div>
-        </div>
-    </header>
+    <!-- Shared Header -->
+    <div id="shared-header"></div>
 
     <main>
         <section id="home" class="hero-bg min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
@@ -229,120 +122,14 @@
         </section>
     </main>
 
-    <footer class="bg-black text-light-text">
-        <div class="container mx-auto px-4 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-center md:text-left">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Freiburg<span class="text-neon-purple">Vibe</span></h3>
-                    <p class="text-subtle-gray">Dein moderner Guide für das Beste in Freiburg.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-lg mb-4">Navigation</h4>
-                    <ul class="space-y-2 text-subtle-gray">
-                        <li><a href="#home" class="hover:text-neon-purple transition-colors">Home</a></li>
-                        <li><a href="#news" class="hover:text-neon-purple transition-colors">News & Tipps</a></li>
-                        <li><a href="#events" class="hover:text-neon-purple transition-colors">Events</a></li>
-                        <li><a href="blog.html" class="hover:text-neon-purple transition-colors">Blog</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold text-lg mb-4">Unternehmen</h4>
-                     <ul class="space-y-2 text-subtle-gray">
-                        <li><a href="about.html" class="hover:text-neon-purple transition-colors">Über Uns</a></li>
-                        <li><a href="kontakt.html" class="hover:text-neon-purple transition-colors">Kontakt & Werbung</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold text-lg mb-4">Rechtliches</h4>
-                    <ul class="space-y-2 text-subtle-gray">
-                        <li><a href="impressum.html" class="hover:text-neon-purple transition-colors">Impressum</a></li>
-                        <li><a href="datenschutz.html" class="hover:text-neon-purple transition-colors">Datenschutz</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold text-lg mb-4">Social Media</h4>
-                    <div class="flex justify-center md:justify-start space-x-6 text-2xl text-subtle-gray">
-                        <a href="#" aria-label="Facebook" class="hover:text-neon-purple transition-colors transform hover:scale-110"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram" class="hover:text-neon-purple transition-colors transform hover:scale-110"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="TikTok" class="hover:text-neon-purple transition-colors transform hover:scale-110"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center text-subtle-gray mt-10 border-t border-gray-800 pt-8">
-                &copy; 2025 FreiburgVibe. Mit <i class="fas fa-heart text-neon-purple"></i> in Freiburg erstellt.
-            </div>
-        </div>
-    </footer>
-    
+    <!-- Shared Footer -->
+    <div id="shared-footer"></div>
+
+    <!-- Shared Scripts -->
+    <div id="shared-scripts"></div>
+
     <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const nav = document.getElementById('main-nav');
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuIcon = document.getElementById('mobile-menu-icon');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('main section');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-
-            let currentSectionId = 'home';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (window.scrollY >= sectionTop - 100) {
-                   currentSectionId = section.getAttribute('id');
-                }
-            });
-            navLinks.forEach(link => {
-                link.classList.remove('nav-link-active');
-                if (link.getAttribute('href') === `#${currentSectionId}`) {
-                    link.classList.add('nav-link-active');
-                }
-            });
-        });
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-            mobileMenuIcon.classList.toggle('fa-bars');
-            mobileMenuIcon.classList.toggle('fa-times');
-        });
-        document.querySelectorAll('#mobile-menu a, #main-nav a[href^="#"]').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-                mobileMenuIcon.classList.add('fa-bars');
-                mobileMenuIcon.classList.remove('fa-times');
-            });
-        });
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
-        
-        document.querySelectorAll('.ripple-btn').forEach(button => {
-            button.addEventListener('click', (e) => {
-                const rect = button.getBoundingClientRect();
-                const circle = document.createElement('span');
-                const diameter = Math.max(button.clientWidth, button.clientHeight);
-                const radius = diameter / 2;
-                circle.style.width = circle.style.height = `${diameter}px`;
-                circle.style.left = `${e.clientX - rect.left - radius}px`;
-                circle.style.top = `${e.clientY - rect.top - radius}px`;
-                circle.classList.add('ripple');
-                const existingRipple = button.querySelector('.ripple');
-                if (existingRipple) existingRipple.remove();
-                button.appendChild(circle);
-            });
-        });
-
         const rssFeedUrl = "https://www.badische-zeitung.de/feed.rss";
         const rssJsonApi = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(rssFeedUrl);
         
@@ -384,6 +171,18 @@
             document.getElementById('rss-feed-container').innerHTML = "<p class='text-subtle-gray col-span-full text-center'>RSS-Feed konnte nicht geladen werden.</p>";
           });
     });
+    </script>
+
+    <script>
+        // Use fetch to load shared components
+        fetch('shared-head.html').then(response => response.text()).then(data => document.getElementById('shared-head').innerHTML = data);
+        fetch('shared-header.html').then(response => response.text()).then(data => document.getElementById('shared-header').innerHTML = data);
+        fetch('shared-footer.html').then(response => response.text()).then(data => document.getElementById('shared-footer').innerHTML = data);
+        fetch('shared-scripts.html').then(response => response.text()).then(data => {
+            const script = document.createElement('script');
+            script.innerHTML = data;
+            document.body.appendChild(script);
+        });
     </script>
 </body>
 </html>

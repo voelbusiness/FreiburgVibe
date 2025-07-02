@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Shared Head -->
+    <div id="shared-head"></div>
+
+</head>
+<body class="bg-dark-bg">
+
+    <!-- Shared Header -->
+    <div id="shared-header"></div>
+
+    <main class="pt-20">
+        <div class="container mx-auto px-4 py-16">
+            <div class="max-w-4xl mx-auto bg-dark-card p-8 md:p-12 rounded-2xl shadow-lg">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-8 text-center">Impressum</h1>
+                <div class="legal-content">
+                    <h2>Angaben gemäß § 5 TMG</h2>
+                    <p>Max Mustermann<br>
+Musterstraße 1<br>
+79100 Freiburg im Breisgau</p>
+
+                    <h2>Kontakt</h2>
+                    <p>Telefon: +49 (0) 123 456789<br>
+E-Mail: info@freiburg-vibe.de</p>
+
+                    <h2>Redaktionell verantwortlich</h2>
+                    <p>Max Mustermann</p>
+
+                    <p class="mt-8 text-sm text-subtle-gray">
+                        <strong>Hinweis:</strong> Dies ist ein Muster-Impressum. Bitte ersetzen Sie die hier aufgeführten Daten durch Ihre eigenen, korrekten Angaben.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Shared Footer -->
+    <div id="shared-footer"></div>
+
+    <!-- Shared Scripts -->
+    <div id="shared-scripts"></div>
+
+    <script>
+        // Use fetch to load shared components
+        fetch('shared-head.html').then(response => response.text()).then(data => document.getElementById('shared-head').innerHTML = data);
+        fetch('shared-header.html').then(response => response.text()).then(data => document.getElementById('shared-header').innerHTML = data);
+        fetch('shared-footer.html').then(response => response.text()).then(data => document.getElementById('shared-footer').innerHTML = data);
+        fetch('shared-scripts.html').then(response => response.text()).then(data => {
+            const script = document.createElement('script');
+            script.innerHTML = data;
+            document.body.appendChild(script);
+        });
+    </script>
+</body>
+</html>
